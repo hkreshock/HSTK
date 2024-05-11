@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import hstkFetch from '../../hstkFetch';
 
 const Item = ({ title, id }) => (
-    <View style={{ display: 'flex', flexDirection: 'row', padding: '12px', alignItems: 'center' }}>
-        <Image style={{ width: '25px', height: '25px' }} source={require('../../../assets/icon.png')}></Image>
+    <View style={{ display: 'flex', flexDirection: 'row', padding: 12, alignItems: 'center' }}>
+        <Image style={{ width: 25, height: 25 }} source={require('../../../assets/icon.png')}></Image>
         <View style={{ display: 'flex', flexDirection: 'column', maxWidth: '50%' }}>
             <Text>{id}</Text>
             <Text>{title}</Text>

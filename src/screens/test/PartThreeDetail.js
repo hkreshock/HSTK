@@ -3,13 +3,13 @@ import { View, Text, FlatList, Image, TouchableOpacity } from "react-native";
 import hstkFetch from '../../hstkFetch';
 
 const Item = ({ email, body, removeComment }) => (
-    <View style={{ display: 'flex', flexDirection: 'row', borderBottom: '1px solid black', justifyContent: 'space-between' }}>
+    <View style={{ display: 'flex', flexDirection: 'row', borderBottomColor: 'black', borderBottomWidth: 1, justifyContent: 'space-between' }}>
         <View style={{ display: 'flex', flexDirection: 'column', maxWidth: '80%' }}>
             <Text>{email}</Text>
             <Text>{body}</Text>
         </View>
         <TouchableOpacity onPress={removeComment}>
-            <Image style={{ width: '35px', height: '35px', marginTop: '5px' }} source={require('../../../assets/icon.png')}></Image>
+            <Image style={{ width: 35, height: 35, marginTop: 5 }} source={require('../../../assets/icon.png')}></Image>
         </TouchableOpacity>
     </View>
 );
@@ -41,9 +41,9 @@ export default function({ id }) {
 
     return id ?
     <View>
-        <Text style={{ borderBottom: '1px solid black' }}>{post?.title}</Text>
+        <Text style={{ borderBottomColor: 'black', borderBottomWidth: 1 }}>{post?.title}</Text>
         <Text>{post?.body}</Text>
-        <Text style={{ borderBottom: '1px solid black', marginTop: '50px' }}>Comments:</Text>
+        <Text style={{ borderBottomColor: 'black', borderBottomWidth: 1, marginTop: 50 }}>Comments:</Text>
         <FlatList
           data={comments}
           renderItem={({item, index}) => <Item removeComment={() => removeComment(index)} email={item.email} body={item.body} />}
